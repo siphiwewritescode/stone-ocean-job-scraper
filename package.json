@@ -1,0 +1,14 @@
+{
+  "name": "rapido-v2",
+  "version": "2.0.0",
+  "description": "SA Data Jobs Search Agent",
+  "main": "job_search.js",
+  "scripts": {
+    "search": "node job_search.js",
+    "save-session": "node save_linkedin_session.js"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2",
+    "nodemailer": "^6.9.0"
+  }
+}

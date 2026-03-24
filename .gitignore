@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Session data (sensitive)
+linkedin_session.json
+
+# Job results output
+sa_data_jobs_*.json
+
+# Logs & runtime state
+*.log
+status.txt
