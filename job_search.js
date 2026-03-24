@@ -229,7 +229,6 @@ async function scrapeCompanyPages(browser) {
         if (!seniority) continue; // 8+ years experience required — skip
 
         jobs.push({
-          applied: false,
           title: job.title,
           company: job.company,
           location,
@@ -412,7 +411,6 @@ async function sendEmail(newJobs, totalJobs) {
   const jobRows = newJobs.map((job, i) => `
     <tr style="border-bottom:1px solid #ddd;">
       <td style="padding:8px; text-align:center;">${i + 1}</td>
-      <td style="padding:8px; text-align:center;">&#10060; No</td>
       <td style="padding:8px;">${escapeHtml(job.title)}</td>
       <td style="padding:8px;">${escapeHtml(job.company)}</td>
       <td style="padding:8px;">${escapeHtml(job.location)}</td>
@@ -431,7 +429,6 @@ async function sendEmail(newJobs, totalJobs) {
       <thead style="background-color:#4A90D9; color:white;">
         <tr>
           <th style="padding:8px;">#</th>
-          <th style="padding:8px;">Applied</th>
           <th style="padding:8px;">Job Title</th>
           <th style="padding:8px;">Company</th>
           <th style="padding:8px;">Location</th>
@@ -447,8 +444,7 @@ async function sendEmail(newJobs, totalJobs) {
 
     <hr style="margin:20px 0;">
     <h3 style="color:#333;">Today's Full Job List (including previously sent jobs)</h3>
-    <p>The attached JSON file contains all ${totalJobs} jobs found today, including your applied status for each.</p>
-    <p style="margin-top:12px; font-size:13px; color:#555;">Update "applied": true in the JSON file once you apply.</p>
+    <p>The attached JSON file contains all ${totalJobs} jobs found today.</p>
   `;
 
   const mailOptions = {

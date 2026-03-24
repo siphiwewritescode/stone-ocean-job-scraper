@@ -58,7 +58,6 @@ Results are saved to `sa_data_jobs_YYYY-MM-DD.json` with the following fields pe
 
 ```json
 {
-  "applied": false,
   "title": "Data Analyst",
   "company": "FNB",
   "location": "Johannesburg, South Africa",
@@ -70,8 +69,6 @@ Results are saved to `sa_data_jobs_YYYY-MM-DD.json` with the following fields pe
   "description_snippet": "..."
 }
 ```
-
-Update `"applied": true` once you've applied to a role.
 
 ## Tech stack
 
